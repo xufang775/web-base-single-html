@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Document</title>
+  <style type="text/css">
+    .parent-div{width: 200px; height: 200px;background: #0af130;margin: 20px;}
+    .child-div{width: 60px; height: 60px; background: rgb(197, 27, 27);}
+    .center{margin: auto;}
+  </style>
+</head>
+<body>
+  <h1>Div水平居中</h1>
+  <code>（一）设置子div：margin:0 auto;</code>
+  <div class="parent-div">
+    <div class="child-div center"></div>
+  </div>
+  <code>（二）父div：text-align:center; 子div：display: inline-block;</code>
+  <div class="parent-div" style="text-align: center;">
+    <div class="child-div" style="display: inline-block;"></div>
+  </div>
+  <code>（三）父div：position:relative; 子div：position:absolute; left:50%; margin-left: -(子div的width/2)</code>
+  <div class="parent-div" style="position: relative;">
+    <div class="child-div" style="position: absolute; left: 50%; margin-left: -30px;"></div>
+  </div>
+  <code>（四）父div：display:flex; justify-content:center;</code>
+  <div class="parent-div" style="display:flex; justify-content: center;">
+    <div class="child-div"></div>
+  </div>
+</body>
+</html>
