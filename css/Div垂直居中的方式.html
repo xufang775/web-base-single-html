@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Document</title>
+  <style type="text/css">
+    .parent-div{width: 200px; height: 200px;background: #0af130;margin: 20px;}
+    .child-div{width: 60px; height: 60px; background: rgb(197, 27, 27);}
+    .inner{background:rgb(197, 27, 27);}
+    .center{margin: auto;}
+    .div4::before{content: ''; display: inline-block;height: 100%;vertical-align: middle;}
+  </style>
+</head>
+<body>
+  <h1>Div垂直居中</h1>
+    <code>（1）父div：line-height:200px;; 子div：display: inline-block;line-height: 1</code>
+    <div class="parent-div" style="line-height:200px; vertical-align: middle;">
+      <div class="child-div" style="display: inline-block; line-height: 1;width: unset;height: unset;">
+        我是内框<br/>
+        我是内框<br/>
+        <!-- <div style="height: 50px;background: #000;"></div> -->
+      </div>
+    </div>
+  </div>
+  
+  <code>（2）父div：position:relative; 子div：position:absolute; top:50%; margin-top: -(子div的height/2)</code>
+  <div class="parent-div" style="position: relative;">
+    <div class="child-div" style="position: absolute; top: 50%; margin-top: -30px;"></div>
+  </div>
+
+  <code>（3）父div：line-height:200px;; 子div：display: inline-block;line-height: 1</code>
+  <div class="parent-div" style="position: relative;">
+    <div class="inner" style="position:absolute;top:0;left:0;right:0;bottom:0;margin: auto; height: 40px;;">
+      我是内框<br/>
+      我是内框<br/>
+      我是内框<br/>
+    </div>
+  </div>
+
+  <code>（4）父div：line-height:200px;; 子div：display: inline-block;line-height: 1</code>
+  <div class="parent-div div4" >
+    <div class="inner" style="display: inline-block;vertical-align: middle;">
+      我是内框<br/>
+      我是内框<br/>
+      我是内框<br/>
+    </div>
+  </div>
+
+  <code>（5）父div：position: relative; 子div：position:absolute;top:50%;transform: translate(0,-50%);</code>
+  <div class="parent-div" style="position: relative;">
+    <div class="inner" style="position:absolute;top:50%;transform: translate(0,-50%);">
+      我是内框<br/>
+      我是内框<br/>
+      我是内框<br/>
+    </div>
+  </div>
+
+  <code>（四）父div：display:flex; flex-direction: column; justify-content:center;</code>
+  <div class="parent-div" style="display:flex; flex-direction: column; justify-content: center;">
+    <div class="child-div"></div>
+  </div>
+
+  <code>（五）父div：display:flex; align-items: center;</code>
+  <div class="parent-div" style="display:flex; align-items: center;">
+    <div class="inner" >
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+    </div>
+  </div>
+
+  <code>（五）父div：display:flex; 子div: margin:auto;</code>
+  <div class="parent-div" style="display:flex; vertical-align: middle;">
+    <div class="inner" style="margin:auto;">
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+    </div>
+  </div>
+
+  <code>（五）父div：display:grid; 子div: margin:auto;</code>
+  <div class="parent-div" style="display:grid; vertical-align: middle;">
+    <div class="inner" style="margin:auto;">
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+    </div>
+  </div>
+
+  <code>（五）父div：display:flex/grid; 子div: align-self: center;</code>
+  <div class="parent-div" style="display:grid; vertical-align: middle;">
+    <div class="inner" style="align-self: center;">
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+    </div>
+  </div>
+
+
+  <code>（五）父div：display:table-cell; vertical-align: middle;</code>
+  <div class="parent-div" style="display:table-cell; vertical-align: middle;">
+    <div class="child-div" style="width: unset;height:unset;">
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+      <div>多行文字垂直居中</div>
+    </div>
+  </div>
+</body>
+</html>
