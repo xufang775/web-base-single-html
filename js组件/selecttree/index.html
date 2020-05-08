@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="./selecttree.css" />
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="selecttree.js"></script>
+</head>
+<body>
+  <div>
+    <input 
+    id="equ_category_small"  
+    name="equ_category_small" 
+    type="text" 
+    class="form-control"/>
+  </div>
+  <script>
+    $("#equ_category_small").selectTree({
+      url: "/equipment/GetCategoryList",
+      isRadio: true,
+      title: "请选择设备",
+      requestCallBack: function (data) {
+        var treedata = [];
+        if (data.code == 0) {
+            $(data.data.CategoryBig).each(function (i, o) {
+                var node = {};
+                var id = o.categoryId;
+                var pid = o.pCategoryId;
+                node.id = id;
+                node.pId = pid;
+                node.name = o.categoryName;
+                node.isParent = true;
+                node.open = true;
+                treedata.push(node);
+            });
+            $(data.data.CategorySmall).each(function (i, o) {
+                var node = {};
+                var id = o.categoryId;
+                var pid = o.pCategoryId;
+                node.id = id;
+                node.pId = pid;
+                node.name = o.categoryName;
+                treedata.push(node);
+            });
+        }
+        return treedata;
+      },
+      selected: function (node) {
+          $("#equ_category_small").val(node[0].id);
+          //$("#equ_category_small").valid();
+      }
+  });
+
+  </script>
+</body>
+</html>

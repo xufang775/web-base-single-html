@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer{background-color:pink;}
+    .div1,.div2{width: 100px; height: 100px; display: inline-block;}
+    .div1{ background-color: palegreen; }
+    .div2{ background-color: palevioletred; }
+
+    .aside{float: left; width: 50%;}
+    .main{
+      width: 50%; 
+      height: 100%; 
+      overflow: hidden;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body >
+  <h2>5.两个相邻的 inline-block 为什么有间隔？如何消除？</h2>
+  <div style="height: 800px;background: #f2f2f2;">
+    <div class="aside">
+      <h4>下面两个inline-block有间隔：</h4>
+      <div class="outer">
+        <div class="div1">inline-block(1)</div>
+        <div class="div2">inline-block(2)</div>
+      </div>
+
+      <h3>消除间隔：</h3>
+      <h4>方法一：下面两个inline-block没有间隔（利用html结构消除间隔）：</h4>
+      <div class="outer">
+        <div class="div1">inline-block(1)</div><div class="div2">inline-block(2)</div>
+      </div>
+
+      <h4>方法二：下面两个inline-block没有间隔（利用css消除间隔 { font-size:0; } ）：</h4>
+      <div class="outer" style="font-size:0;">
+        <div class="div1">inline-block(1)</div>
+        <div class="div2">inline-block(2)</div>
+      </div>
+
+    </div>
+    <div class="main">
+      <p>出现间隔的原因：</p>
+      <p>其实产生空白间距的原因是我们编码的习惯照成的，
+      我们习惯在标签结束处敲一个回车，然而回车会产生回车符，相当于空白符。
+      但多个空白符会合并成一个空白符。正是这个习惯照成了空白间隔。</p>
+      <p>消除间隔的方法：</p>
+      <ul>
+        <li>从html结构上入手，方法就是标签结束处消除换行符，或者把换行符添加到标签内部。</li>
+        <li>使用css,空白符也是字符，我们可以设置父元素的字体大小设为0,这样空白符也就消失了。</li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script type="text/javascript">
+    alert("这是代码块0");
+  </script> -->
+  <script src="./02.js编译运行机制-代码块-执行顺序.js" ></script>
+</head>
+<body>
+  <p>代码块的执行顺序是从上到下的。</p>
+  <script type="text/javascript">
+    // alert("这是代码块一");
+    console.log("代码块一：开始");
+    console.log(a);
+    var a = 'a'
+    console.log(a);
+    if(a == 'a'){
+      console.log("if{}:"+11);
+    } else {
+      console.log("if{}:"+22);
+    }
+    console.log("代码块一：结束");
+
+  </script>
+  <script type="text/javascript">
+    console.log("代码块二：开始");
+    console.log(2);
+    console.log(b);
+    var b = 'b'
+    console.log(b);
+    console.log("代码块二：结束");
+  </script>
+
+</body>
+</html>
+<!-- <script type="text/javascript">
+  alert("这是代码块3");
+</script> -->
+

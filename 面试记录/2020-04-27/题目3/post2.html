@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>post2</title>
+<script>
+  function click1(){
+    var name = document.getElementById("name").value;    
+    var pwd = document.getElementById("pwd").value;        
+    document.cookie = "name:" + name + "&pwd:" + pwd;
+    console.log(document.cookie);
+    
+    // location.href="get2.html";
+  }
+  /*
+    关于cookie，要特别处理传过来的字符串，其次，还有些浏览器不支持cookie的，但目前来说，一般浏览器都支持cookie
+  */
+</script>
+
+</head>
+<body>
+  名字：<input type="text" id="name"/>
+  密码：<input type="text" id="pwd"/>
+  <input type="button"  onclick="click1()" value="提交："/>
+</body>
+</html>

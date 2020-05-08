@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outter{margin-bottom: 30px;margin-top: 5px; background:palegreen;border:2px solid red; width: 300px;}
+    .inner1,.inner2{width: 200px;height: 100px; }
+    .inner1{background:purple;}
+    .inner2{background:yellow;}
+  </style>
+</head>
+<body>
+  <div>下面是没有设置postion：</div>
+  <div class='outter'>
+    <div class="inner1">div1</div>
+    <div class="inner2">div2</div>
+  </div>
+
+  <div>下面是设置了postion：</div>
+  <div>div2看不见了，且容器的高度也变小了。</div>
+  <div>因为，div1脱离文档流，挡住了div2</div>
+  <div class='outter'>
+    <div class="inner1" style="position: absolute; ">div1</div>
+    <div class="inner2">div2</div>
+  </div>
+
+  <div>设置 div1的 left:20px top:20px;</div>
+  <div class='outter' style="position: relative;">
+    <div class="inner1" style="position: absolute; left:20px;top:20px;">div1</div>
+    <div class="inner2">div2</div>
+  </div>
+
+  <div>设置 div居中</div>
+  <div class='outter' style="position: absolute; margin:auto; top:0;right:0;bottom:0;left:0;">
+    <div class="inner1">div1</div>
+    <div class="inner2">div2</div>
+  </div>
+
+  <div>设置 div1的 left:20px top:20px;</div>
+  <div class="outer" style="width: 80%;height:600px; background:salmon; position: relative;">
+    <div class='outter' style="position: absolute; margin:auto; top:0;right:0;bottom:0;left:0; height:300px;">
+      <div class="inner1">div1</div>
+      <div class="inner2">div2</div>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outter{margin: 30px;background:palegreen;border:2px solid red; width: 300px;}
+    div:not(.outter){width: 200px;height: 100px; }
+    .inner1{background:purple;}
+    .inner2{background:yellow;}
+  </style>
+</head>
+<body>
+  <div class='outter'>
+    <div class="inner1" style="position: relative;"></div>
+    <div class="inner2"></div>
+  </div>
+  <div class='outter'>
+    <div class="inner1" style="position: relative; top:-20px; right: 10px;"></div>
+    <div class="inner2"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text{font-size: 18px;line-height: 28px;}
+    .container{ display: grid; margin-bottom: 20px; text-align: center; background:powderblue; font-size: 30px;font-weight: bold; }
+    .container div{border: 1px solid white;}
+    .item1{ background:purple;}
+    .item2{ background:rosybrown;}
+    .item3{ background:salmon;}
+    .item4{ background:palegreen}
+    .item5{ background:palevioletred}
+    .item6{ background:yellowgreen;}
+    .item7{ background:yellow;}
+    .item8{ background:aqua;}
+    .item9{ background:brown}
+    .item10{ background:cornflowerblue}
+  </style>
+</head>
+<body>
+  <h1>Grid布局</h1>
+  <h2>grid-template-columns,grid-template-rows</h2>
+
+  <div class="text">grid-template-columns: 200px 200px; grid-template-rows: 150px 150px 120px;</div>
+  <div class="container" style="grid-template-columns: 200px 200px; grid-template-rows: 150px 150px 120px;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">grid-template-columns: 30% 60%; grid-template-rows: 25% 40% 35%;</div>
+  <div class="container" style="grid-template-columns: 30% 60%; grid-template-rows: 25% 40% 35%;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">grid-template-columns:repeat(2,200px);grid-template-rows: repeat(3,150px);</div>
+  <div class="container" style="grid-template-columns:repeat(2,200px);grid-template-rows: repeat(3,150px);">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">grid-template-columns:1fr 1fr;</div>
+  <div class="container" style="grid-template-columns:1fr 1fr;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">grid-template-columns:repeat(2, 100px 20px 80px);;</div>
+  <div class="container" style="grid-template-columns:repeat(2, 200px 100px 250px);grid-template-rows: repeat(3,200px);">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+  </div>
+
+  <div class="text">grid-template-columns:repeat(auto-fill, 100px);grid-template-rows: repeat(3,80px);</div>
+  <div class="container" style="grid-template-columns:repeat(auto-fill, 100px);grid-template-rows: repeat(3,80px);">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+  </div>
+
+
+  <div>grid-template-columns:150px 1fr 1fr;</div>
+  <div class="container" style="grid-template-columns:150px 1fr 1fr;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div>grid-template-columns:1fr 1fr minmax(100px,200px);</div>
+  <div class="container" style="grid-template-columns:1fr 1fr minmax(100px,200px);">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">(两栏式布局)grid-template-columns:30% 70%;grid-template-rows: 400px;</div>
+  <div class="container" style="grid-template-columns:30% 70%;grid-template-rows: 400px;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+  </div>
+  
+
+  <h2>grid-row-gap,grid-column-gap</h2>
+
+  <div class="text">grid-template-columns:150px 1fr 1fr; grid-template-rows: 100px 150px;row-gap: 20px;column-gap:30px;</div>
+  <div class="container" style="grid-template-columns:150px 1fr 1fr; grid-template-rows: 100px 150px;row-gap: 20px;column-gap:30px;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">grid-template-columns:150px 1fr 1fr; grid-template-rows: 100px 150px;gap:20px 40px;</div>
+  <div class="container" style="grid-template-columns:150px 1fr 1fr; grid-template-rows: 100px 150px;gap:20px 50px;">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+
+  <div class="text">grid-template-areas: 'a a a'
+    'b b b'
+    'c c c';</div>
+  <div class="container" style="grid-template-columns: 100px 100px 100px;grid-template-rows: 100px 100px 100px;
+grid-template-areas: 'a a a'
+                     'b b b'
+                     'c c c';">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+  </div>
+
+  <div class="text">grid-template-columns: 100px 100px 100px;grid-template-rows: 100px 100px 100px; grid-auto-flow: column;</div>
+  <div class="container" style="grid-template-columns: 100px 100px 100px;grid-template-rows: 100px 100px 100px; grid-auto-flow: column;">
+    <div class="item1" style="grid-column-start: 1; grid-column-end: 4;">1</div>
+    <div class="item2" style="grid-column-start: 1; grid-column-end: 3;">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+  </div>
+
+
+  <div>grid-template-columns:[c1] 100px [c2] 100px [c3] auto [c4];</div>
+  <div style="display:grid; grid-template-columns:[c1] 100px [c2] 100px [c3] auto [c4];">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+
+  <div>grid-template-columns:100px auto 100px; grid-column-gap: 20px;</div>
+  <div style="display: grid; grid-template-columns:100px auto 100px; column-gap: 20px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+
+</body>
+</html>

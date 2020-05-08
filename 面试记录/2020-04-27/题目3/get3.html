@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>get3</title>
+<script>
+  function click1(){
+    document.getElementById("name").value = localStorage.getItem("name");
+    document.getElementById("pwd").value = localStorage.getItem("pwd");
+  }
+  /*
+    方便简单， 但是要考虑浏览器的版本支持
+  */
+</script>
+</head>
+<body>
+  名字：<input type="text" id="name"/>
+  密码：<input type="text" id="pwd"/> 
+  <input type="button"  onclick="click1()" value="获取："/>
+</body>
+</html>

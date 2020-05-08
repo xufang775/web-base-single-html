@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>demo</title>
+    </head>
+    <body>
+      1.第一种
+利用margin，div1的宽减去div2的宽就是div2margin-left的数值：（100-40）/2=30
+div1的高减去div2的高就是div2margin-top的数值：（100-40）/2=30
+        <style type="text/css">
+            .div1{  width: 100px; height: 100px; border: 1px solid #000000;} 
+            .div2{ width:40px ; height: 40px; background-color: green;}
+            .div22{
+                margin-left: 30px;margin-top: 30px;
+            }
+        </style>
+        <div class="div1">
+            <div class="div2 div22">
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a{
+      display: inline-block; 
+    width: 40px; 
+    height: 40px;
+    margin: 10px;
+    background-color: #d0d0d0;
+    text-align: center;
+    vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">
+    <a href="#">a1</a>
+    <a href="#">a2</a>
+    <a href="#">a3</a>
+    <a href="#">a4</a>
+    <a href="#">a5</a>
+  </div>
+  <script>
+    var div1 = document.getElementById('div1');
+    div1.addEventListener('click',function(e){
+      // console.log(e);
+      // e.target 可以监听到触发点击事件的元素是哪一个
+      var target = e.target;
+      // console.log(target);
+      
+      if(target.nodeName === 'A'){
+        // 点击的是 <a> 元素
+          console.log(target.innerHTML);
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>get2</title>
+<script>
+  function click1(){
+    var params= document.cookie;  
+    console.log(params);
+    var pa = params.split("&");
+    var s = new Object();
+    for(var i = 0; i < pa.length; i ++){
+        s[pa[i].split(":")[0]] = pa[i].split(":")[1];
+    }
+    document.getElementById("name").value =s.name;
+    document.getElementById("pwd").value = s.pwd;
+  }
+    
+</script>
+</head>
+<body>
+    名字：<input type="text" id="name"/>
+    密码：<input type="text" id="pwd"/> 
+    <input type="button"  onclick="click1()" value="获取："/>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>浮动</title>
+        <style>
+            * {
+                margin: 0;
+            }
+
+            .main {
+                width:750px;
+                margin:30px auto;
+                position: relative;
+            }
+
+            .wraper {
+                width:410px;
+                background-color: #ccc;
+                margin-bottom: 30px;
+            }
+
+            .container {
+                background-color: green;
+                width: 350px;  
+                margin-left: 30px;      
+            }
+
+            .contain {
+                background-color: green;
+                margin-left: 30px;
+            }/*有宽度的容器不会自动收缩，不能体现包裹性，这里去掉容器的宽度*/
+
+            .float {
+                float:left;
+            }
+
+            .clearfix:after {
+                 content: "";
+                 display: table;
+                 clear: both;
+             }
+ 
+            .clearfix {
+                 *zoom: 1;
+             }
+
+            .box1 {
+                height: 50px;
+                width: 100px;
+                background-color: red;
+                margin: 20px;
+            }
+
+            .box2 {
+                height: 100px;
+                width: 200px;
+                background-color: blue;
+                margin: 20px;
+            }
+
+            .list {
+                background-color: orange;
+                line-height: 1.5;
+                width: 300px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            li {
+                margin-bottom: 80px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="wraper">
+                <div class="container">
+                    <div class="box1">box1</div>
+                    <div class="box2">box2</div>
+                </div><!--结束container-->
+            </div><!--结束wraper-->
+            <div class="wraper clearfix">
+                <div class="contain float">
+                    <div class="box1">box1</div>
+                    <div class="box2">box2</div>
+                </div><!--结束container-->
+            </div><!--结束wraper-->
+            <div class="wraper">
+                <div class="container">
+                    <div class="box1 float">box1</div>
+                    <div class="box2">box2</div>
+                </div><!--结束container-->
+            </div><!--结束wraper-->
+            <div class="wraper clearfix">
+                <div class="container">
+                    <div class="box1">box1</div>
+                    <div class="box2 float">box2</div>
+                </div><!--结束container-->
+            </div><!--结束wraper-->
+            <div class="list">
+                <ol>
+                    <li>第一幅图中，box1与box2在一个绿色的容器中垂直摆放，box1的margin-bottom与box2的margin-top合并，所以它们的margin为20px。</li>
+                    <li>第二幅图中，将绿色容器浮动，浮动之后容器紧紧包裹着里面的元素，是为包裹性。（要体现包裹性，一定不要设置浮动元素的宽度，否则不会自动收缩）
+                    </li>
+                    <li>第三幅图中，将box1浮动，box1脱离文档流，box2向上占据box1的位置，它们的上外边距没有合并。<br />
+                        字符“box2”如此显示是box1的margin-top和margin-right的原因。
+                    </li>
+                    <li>第四幅图中，将box2浮动，容器的高度塌陷；box2的上外边距与box1的下外边距没有合并。
+                    </li>
+                </ol>
+            </div><!--结束list-->
+        </div><!--结束main-->
+    </body>
+</html>

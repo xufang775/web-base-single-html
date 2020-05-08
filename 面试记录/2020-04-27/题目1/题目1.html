@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span { background:palegreen; width: 300px; height: 80px; }
+    .box{
+      width: 100px;
+      height: 100px; 
+      background:palegreen; 
+      margin: 10px;
+      border: 5px solid purple;
+      padding: 20px 80px;
+      }
+    .img1{
+      padding: 20px; background:royalblue;
+      border: 5px solid purple;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <h3>1）盒模型的高宽包含内边距padding和边框border</h3>
+  <div class="box">盒子</div>
+
+  <h3>2）可以设置行内元素的高宽-</h3>
+  <h4>在Standards模式下，给span等行内元素设置wdith和height都不会生效，而在quirks模式下，则会生效。</h4>
+  <div>
+    <span>行内元素span</span>
+  </div>
+
+  <h3>3）可设置百分比的高度</h3>
+  <div class="box" style=" width: 500px; height: unset;">
+    <div style="background: salmon; height: 50%;"></div>
+  </div>
+
+  <h3>4）用margin:0 auto设置水平居中在IE下会失效</h3>
+  <div class="box" style=" width: 500px; height: 200px;">
+    <div style="background: salmon; width: 100px; height: 100px; margin: 0 auto;"></div>
+  </div>
+  <h4>但在quirks模式下却会失效,quirk模式下的解决办法，用text-align属性:
+    body{text-align:center};#content{text-align:left}</h4>
+  <div class="box" style=" width: 500px; height: 200px; text-align: center;">
+    <div style="background: salmon; width: 100px; height: 100px; text-align: left;"></div>
+  </div>
+
+  <h3>5）quirk模式下设置图片的padding会失效</h3>
+  <div style="background: pink;">
+    <img src="./photo1.jpg" width="200" class="img1"/>
+  </div>
+
+  <h3>6）quirk模式下Table中的字体属性不能继承上层的设置</h3>
+  <div style="background: pink; font-size: 28px; font-weight: bold;">
+    <table>
+      <tr><td>1111</td><td>22222</td><td>33333</td></tr>
+      <tr><td>4444</td><td>55555</td><td>66666</td></tr>
+    </table>
+  </div>
+
+  <h3>6）quirk模式下white-space:pre会失效</h3>
+  <div style="background: pink; width: 400px; white-space: pre;">
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+  </div>
+  <br/>
+  <div style="background: pink; width: 400px; white-space: pre-line;">
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+    这是一些文本。
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>深入理解float的破坏性</title>
+        <style>
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .container {
+                width:50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .box1,.box2 {
+                background-color: cyan;
+                margin-bottom: 50px;
+            }
+
+            .box1 img,.box2 img {
+                margin:5px;
+                padding:5px;
+                border:1px solid red;
+            }
+
+            .box2 img,.box4 img {
+                float:left;
+
+            }
+
+            .box3 {
+                margin-top: 100px;
+                margin-bottom: 50px;
+            }
+
+            .box3,.box4 {
+                border:2px solid cyan;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="box1">
+                <p>这个盒子中的图像没有浮动。我们先来研究一下，图像在没有浮动的情况下，为什么会这样显示？</p>
+                <p>首先，每一个行内元素都会形成一个行内框，没有被任何标签包含的文本被称为“匿名行内元素”，（文本）行内框的高度为line-height的高度；
+                    <img src="http://a.hiphotos.baidu.com/zhidao/pic/item/72f082025aafa40fa38bfc55a964034f79f019ec.jpg" alt="A picture" style="width:140px;height:80px" />
+                    图像的行内框的高度就是它自身盒子的高度（height+padding+border+margin）。
+                </p>
+                <p>然后，每一行都会形成一个行框，行框必须包含这一行中最高行内框的顶端和最低行内框的底端；于是，这个盒子中的文本和图像就是这样显示了。</p>
+                <p>当所有的行框组合在一起，就形成了整个段落的包含框（containing box，包含盒子）。
+            </div><!--关闭box1-->
+            <div class="box2">
+                <p>这是第二个盒子，图像浮动了。</p>
+                <p>如果浮动只是改变了图像的位置，那么图像应该依旧与自己所在的那一行文字在同一行上，然而它并没有。
+                   与它在同一行的文本重新形成了行框，这个行框的形成完全忽略了图像的行内框。也就是说，因为浮动的破坏性，图像的行内框没有了。
+                </p>
+                <p>所有的行框组成这个段落的包含框，可以明显看到，这个段落的包含框没有把浮动图像包含在内。</p>
+                <p>总结：浮动的破坏性实际上破坏了浮动元素的高度，浮动元素的高度为0。
+                <p><img src="http://a.hiphotos.baidu.com/zhidao/pic/item/72f082025aafa40fa38bfc55a964034f79f019ec.jpg" alt="A picture" style="width:140px;height:80px" /></p>
+                但是浮动元素是有宽度的，正是因为它有宽度，所以才会有文本环绕效果。</p>
+            </div><!--关闭box2-->
+            <div class="box3">
+                <img src="http://a.hiphotos.baidu.com/zhidao/pic/item/72f082025aafa40fa38bfc55a964034f79f019ec.jpg" alt="A picture" style="width:140px;height:80px" /> 图像没有浮动
+            </div><!--关闭box3-->
+            <div class="box4">
+                <img src="http://a.hiphotos.baidu.com/zhidao/pic/item/72f082025aafa40fa38bfc55a964034f79f019ec.jpg" alt="A picture" style="width:140px;height:80px" /> 图像浮动，父元素高度塌陷
+            </div><!--关闭box4-->
+        </div><!--关闭container-->
+    </body>
+</html>
